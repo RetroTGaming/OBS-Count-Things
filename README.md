@@ -3,6 +3,7 @@ This is a Python script that implements a hotkey counter in OBS studio which can
 
 Just a warning; this project is not very well tested. I forked the Obscounter project because it was lacking a few key features that I wanted (such as persisting counters between streams), but you shouldn't consider this production quality code.
 
+![demo](g_spot_counter_demo.gif)
 ![prevew](counter.gif)
 ![ui](scripts_and_settings.png)
 ![hotkeys](hotkeys.png)
