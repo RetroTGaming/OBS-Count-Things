@@ -12,6 +12,8 @@ Just a warning; this project is not very well tested. I forked the Obscounter pr
 
 If you don't know ANYTHING about coding or Python, that's fine. I've posted a YouTube video which walks through this step-by-step on top of these text instructions.
 
+Here's the YouTube version of these instructions: https://www.youtube.com/watch?v=MjSbIC7ZDc0
+
 I'm only going to give these instructions for Windows. First, because I don't own a Mac and so I cannot test it on a Mac. And second, because 99.9999% of people who are gaming and streaming are doing so on Windows.
 
 The version of Python 3 that's used here is VERY important. The script won't even load if your version of Python is wrong. I wrote and tested this script using Python 3.6.8. 
