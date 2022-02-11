@@ -23,9 +23,13 @@ Download the Windows x86_64 executable installer. If you're running on 32-bit Wi
 
 Click the installer and walk through using defaults. A PATH will be shown to you at some point during the installation, I'll give you the default below, but I would highly recommend writing this down. You'll need it later during the configuration stage of this project.
 
-Next, you'll want to download the actual Python script that we're going to be using. 
+Next, you'll want to download the actual Python script that we're going to be using. Put this somewhere you won't accidentally delete it on your system. I put it at `C:/Users/<user>/Documents/`. You can put it wherever you want. Download this zip file and unpack it at this safe location: https://github.com/RetroTGaming/OBS-Count-Things/archive/refs/heads/main.zip
 
-Now that Python is installed, open up OBS. Before we go about configuring anything, add a text source to your scene.
+You should see a folder that looks like this somewhere on your PC:
+
+![unpacked_folder](unpacked_folder.png)
+
+Now that Python is installed and you have the scripts unpacked somewhere safe, open up OBS. Before we go about configuring anything, add a text source to your scene.
 
 ![new_text_source_context_menu](text_source_context_menu.png)
 
@@ -37,18 +41,42 @@ Now, this is where the boys are separated from the bigger boys. Open the scripts
 
 ![tools_scripts_menu](tools_scripts_menu.png)
 
-Everything will be empty here (most likely). 
+Ignore the first tab for now. Click the Python settings tab and point the install path at the Python 3.6.8 install that you did earlier. 
 
-For windows install [python3.6](https://www.python.org/downloads/release/python-368/) 64 or 32 bit depending on your OBS 
-- Create text source
-- Open `Tools>Scripts` 
-- Make sure Python path is not empty
-- Add and select this script
-- Set settings for it
-- Set hotkeys in `File>Settings`
+![python_path](py_path.png)
 
-If you need additional COUNTERS , copy paste `hotkey_counter.py` , and add it again
+Click back to the Scripts tab where we're about to make magic happen.
 
+Everything will be empty here (most likely). Hit the plus button and add the `obs_count_things.py` script that you unpacked earlier in these instructions. 
+
+![file_chooser](file_chooser.png)
+
+If you successfully setup Python 3.6.8 and successfully loaded the .py file, you should see three settings on the right side of the window. 
+
+![scripts_settings](scripts_settings.png)
+
+There are three settings you can use:
+- Set Counter Text: This one will set a prefix in front of the counter. I typically leave this one empty.
+- Set Counter Save Path: This one will allow you to save counts between OBS sessions. If you do NOT set this, the counter will reset to 0 EVERY single time OBS restarts. If you want to retain the counter between sessions, set this to a valid path on your system. I usually set this to the same exact path as the OBS script we downloaded, but it's up to you. 
+- Text Source: This will point to the text source that you setup earlier. The output of the counter (1, 2, .. 10, .. 14, etc.) will get updated here in realtime on your stream or recorded. 
+
+![scripts_settings_filled](scripts_settings_filled.png)
+
+This concludes the script setup portion. The last stage of the setup process involves binding a hotkey to the increment function. I've not actually tested the decrement or reset hotkeys, so use them at your own risk. I'll update this Readme when I get around to that.
+
+Go to File->Settings. Under Hotkeys find the box labeled `OBS Count Things count_up` and set it to the keybind you'd like. Hit Apply and OK. 
+
+![hotkey_bound](hotkey_bound.png)
+
+Now, when you press your hotkey, the text source you setup earlier will increment by 1 with every keypress. Here's a quick demo.
+
+![demo](g_spot_counter_demo.gif)
+
+# Future Features
+
+One day I'd like to:
+- Add an increment setting so you can increment and decrement by a different number than 1.
+- Other ideas I'm not going to type out right now.
 
 # Contribute 
-Submit and MR, issue, or comment and I'll happily review.
+Submit and MR, issue, or comment (on Reddit, YouTube, or GitHub) and I'll happily review.
